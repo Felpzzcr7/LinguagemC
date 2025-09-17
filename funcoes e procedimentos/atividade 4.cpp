@@ -1,52 +1,68 @@
 #include <stdio.h>
 
-// Função que recebe o voto e incrementa o contador correto
-void contabilizarVoto(int voto, int *lula1, int *lula2, int *lula3, int *lula4, int *branco, int *nulo) {
-    switch (voto) {
-        case 1: (*lula1)++; break;
-        case 2: (*lula2)++; break;
-        case 3: (*lula3)++; break;
-        case 4: (*lula4)++; break;
-        case 5: (*branco)++; break;
-        case 6: (*nulo)++; break;
-        default: printf("Voto inválido!\n"); break;
-    }
-}
 
-int main() {
-    int votosv = 0;
-    int lula1 = 0, lula2 = 0, lula3 = 0, lula4 = 0;
+int menu ();
+
+int main(){
+	int opc;
+    int lula = 0, bolsonaro = 0, trump = 0, marcal = 0;
     int branco = 0, nulo = 0;
+	while(1){
+		opc = menu();
+        if(opc == 0) break;
+		switch(opc){
+			
+		case 1:
+			printf("voce votou no nove dedos");
+			lula++;
+			break;
+		case 2:
+            printf("Voce votou no Bolsonaro!\n");
+            bolsonaro++;
+            break;
+        case 3:
+            printf("Voce votou no Trump!\n");
+            trump++;
+            break;
+        case 4:
+            printf("Voce votou no Pablo Marcal!\n");
+            marcal++;
+            break;
+        case 5:
+            printf("Voce votou em Branco!\n");
+            branco++;
+            break;
+        case 6:
+            printf("Voce votou Nulo!\n");
+            nulo++;
+            break;
+        default:
+            printf("Opcao invalida! Tente novamente.\n");
+		}
+	}
+	printf("\n--- RESULTADO FINAL ---\n");
+    printf("Lula: %d votos\n", lula);
+    printf("Bolsonaro: %d votos\n", bolsonaro);
+    printf("Trump: %d votos\n", trump);
+    printf("Pablo Marcal: %d votos\n", marcal);
+    printf("Branco: %d votos\n", branco);
+    printf("Nulo: %d votos\n", nulo);
 
-    while (1) {
-        printf("\n---- URNA ELETRONICA ----\n");
+	return 0;
+}
+int menu (){
+	int opcao;
+	printf("\n---- URNA ELETRONICA ----\n");
         printf("1 - Lula\n");
-        printf("2 - Lula\n");
-        printf("3 - Lula\n");
-        printf("4 - Lula\n");
+        printf("2 - Bolsonaro\n");
+        printf("3 - Trump\n");
+        printf("4 - Pablo Marcal\n");
         printf("5 - Branco\n");
         printf("6 - Nulo\n");
         printf("0 - Encerrar votacao\n");
         printf("Digite seu voto: ");
-        scanf("%d", &votosv);
-
-        if (votosv == 0) break; // encerra votação
-
-        // Chama a função para registrar o voto
-        contabilizarVoto(votosv, &lula1, &lula2, &lula3, &lula4, &branco, &nulo);
-    }
-
-    // Resultado final
-    printf("\n---- RESULTADO FINAL ----\n");
-    printf("Lula (1): %d votos\n", lula1);
-    printf("Lula (2): %d votos\n", lula2);
-    printf("Lula (3): %d votos\n", lula3);
-    printf("Lula (4): %d votos\n", lula4);
-    printf("Brancos: %d votos\n", branco);
-    printf("Nulos: %d votos\n", nulo);
-
-    return 0;
+        scanf("%d", &opcao);
+        return opcao;
 }
-
 
 
