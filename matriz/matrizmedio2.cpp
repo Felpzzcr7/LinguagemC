@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <time.h>
+
+int main(){
+	int matriz1[3][2];
+	int matriz2[2][3];
+	
+	for(int l= 0; l<3; l++)
+		for(int c= 0; c<2; c++)
+			matriz1[l][c]= rand() % 40;
+			
+			
+	
+	for(int lin=0; lin<2; lin++)
+		for(int col=0; col<3; col++)		
+			matriz2[lin][col] = matriz1[col][lin];	
+	
+			
+			printf("matriz 1:");
+	for(int l= 0; l<3; l++){
+			printf("\n");
+			for(int c= 0; c<2; c++)
+				printf("\t%d", matriz1[l][c]);
+			}
+			printf("\n");
+			
+			printf("matriz 2:");
+	for(int l= 0; l<2; l++){
+			printf("\n");
+			for(int c= 0; c<3; c++)
+				printf("\t%d", matriz2[l][c]);
+			}
+	
+	
+	return 0;
+}
