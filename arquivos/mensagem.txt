@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 oifelipe te amo
+=======
+oiii felipe e Rafael eu sou o chatgpt
+>>>>>>> 6485f6c1effb74075b8abdbfc5acd6ce50295855
